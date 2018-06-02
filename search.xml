@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[MBProgressHUD学习]]></title>
+    <url>%2F2018%2F05%2F26%2FMBProgressHUD%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[经典代码解析 执行performSelector方法去除警告信息 1234#pragma clang diagnostic push#pragma clang diagnostic ignored &quot;-Warc-performSelector-leaks&quot; [self performSelector:example.selector];#pragma clang diagnostic pop ​]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>源码学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[颠倒整数]]></title>
+    <url>%2F2018%2F03%2F29%2F7-%E9%A2%A0%E5%80%92%E6%95%B4%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[颠倒整数例 1: 12输入: 123输出: 321 例 2: 12输入: -123输出: -321 例 3: 12输入: 120输出: 21 注意: 假设我们的环境只能处理 32 位 int 范围内的整数。根据这个假设，如果颠倒后的结果超过这个范围，则返回 0。 123456789101112class Solution(object): def reverse(self, x): negative = x &lt; 0 x = abs(x) result = 0 while (x != 0): tail = x % 10 result = result * 10 + tail if result &gt; 0x7FFFFFFF: return 0 x /= 10 return -result if negative else result]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[回文数]]></title>
+    <url>%2F2018%2F03%2F29%2F9-%E5%9B%9E%E6%96%87%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[回文数判断一个整数是否是回文数。不能使用辅助空间 12345678class Solution(object): def isPalindrome(self, x): y = x z = 0 while (x &gt; 0): z = z * 10 + x % 10 x /= 10 return z == y]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[两数之和]]></title>
+    <url>%2F2018%2F03%2F29%2F1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[两数之和给定一个整数数列，找出其中和为特定值的那两个数。 你可以假设每个输入都只会有一种答案，同样的元素不能被重用。 示例: 1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] 1234567891011121314class Solution(object): def twoSum(self, nums, target): """ :type nums: List[int] :type target: int :rtype: List[int] """ d = &#123;&#125; for i,n in enumerate(nums): m = target - n if m in d: return [d[m],i] else: d[n] = i]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux的文件权限与目录配置]]></title>
+    <url>%2F2017%2F11%2F29%2F6.Linux%E7%9A%84%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[用户与用户组 文件所有者 Linux是个多用户、多任务的系统，为了考虑个人隐私及每个人喜好的工作环境，所以有文件所有者概念。通过设置权限，实现文件权限的合理分配。 用户组概念 用户：个人 用户组：多个个人组成的集合 用户和用户组可以多对多，有了用户和用户组，实现了更方便的分配权限。 其他人的概念 非用户或用户组的其它人，Linux中任何一个文件都具有User/Group/Others 3种身份的个别权限 root：万能的天神 可以到达任何地方，拥有最高权限 Linux用户身份与用户组记录的文件 默认情况下所有系统上的账号和一般身份用户，还有root的相关信息，都是记录在/etc/passwd这个文件内，至于个人的密码则记录在/etc/shadow这个文件下。Linux所有的组名都记录在/etc/group内，这3个文件是Linux系统里面账号、密码、用户组信息的集中地。 Linux文件权限概念ls -al显示目录下的所有文件名与相关属性，而参数-al则表示列出所有文件详细的权限与属性（包括隐藏文件，就是第一个字符是’.’的文件）。 1234567891011121314➜ ~ ls -altotal 888drwxr-xr-x+ 107 lijianzhong staff 3424 11 28 23:19 .drwxr-xr-x 8 root admin 256 11 14 00:49 ..-rw------- 1 lijianzhong staff 12288 8 25 2014 .1.c.swp-rw-r--r--@ 1 lijianzhong staff 16 10 24 2013 .:F89AA64-rw------- 1 lijianzhong staff 9 10 26 10:20 .CFUserTextEncoding-rw-r--r--@ 1 lijianzhong staff 55300 11 28 19:51 .DS_Storedrwxr-xr-x 5 lijianzhong staff 160 7 24 11:29 .ShadowsocksXdrwxr-xr-x 5 lijianzhong staff 160 11 25 09:01 .ShadowsocksX-NGdrwx------ 3 lijianzhong staff 96 11 28 19:51 .Trashdrwx------ 4 lijianzhong staff 128 7 1 2015 .UnblunderItems[文件权限] [连接][所有者] [用户组] [文件容量] [修改日期] [文件名] 第一列待办这个文件的类型与权限， 若是[d]则是目录 若是[-]则是文件 若是[l]则表示连接文件（linkfile） 若是[b]则表示设备文件里面的可供存储的接口设备 若是[c]则表示设备文件里面的串行端口设备，如键盘、鼠标 接下来的字符中，以3个为一组，且均为“rwx”的3个参数的组合，其中r代表可读(read)，w代表可写(write)，x代表执行(execute)，如果没有权限，就会出现减号[-]而已（即3个权限的位置固定） 第一组为 文件所有者的权限 第二组为 同用户组的权限 第三组为其他非本用户组的权限 123-rwxr-xr--#第一步，先整理为如下所示[-][rwx][r-x][r--] #解读为 [文件][可读可写可执行][可读可执行][可读] 第二列表示有多少文件名连接到此节点 每个文件都会将其属性和权限记录到文件系统的i-node中，我们使用的目录树却是使用文件名来记录，因此每个文件名都会连接到一个i-node，这个属性记录的就是有多少不同的文件名连接到相同的一个i-node号码 第三列表示这个文件（或目录）的所有者账号 第四列表示这个文件的所属用户组 Linux系统下，一个账号会附属一个或多个用户组 第五列为这个文件的容量大小，默认单位为B 第六列为这个文件的创建日期或最近的修改日期 使用ls -l --full-time显示完整的时间格式 使用LANG=en_US修改语言 第七列为文件名，如果文件名前面多一个.则代表这个文件为隐藏文件 Linux文件权限的重要性 数据安全性（系统保护） 团队开发软件或数据共享的功能 未将权限设置妥当会造成很多危害 如何改变文件属性与权限12345678910chgrp [-R] 组名 文件或目录 #改变文件所属用户组，-R：进行递归的持续修改，用户组必须在/etc/group存在，否则报错。chgrp users install.log #users用户组必须在/etc/group存在，否则会报错，修改install.log用户组为userschown [-R] 账号名称 文件或目录 #改变文件所有者chown bin install.log #用户必须是存在于系统中的账号，在/etc/passwd文件记录chown [-R] 账号名称:组名 文件或目录 # -R递归更改，chown可顺便修改用户组名称chown .sshd install.log #使用chown单独修改所属用户组，所有者与用户组之间用点和冒号等价。cp 源文件 目标文件 #复制文件chmod [-R] xyz 文件或目录 #改变文件权限，xyz待办权限数字 cp复制文件给其他人时，因为复制行为会复制执行者的权限与属性，所以必须修改这个文件的所有者或用户组。 使用chmod设置权限的2种方法，分别可以使用数字或者符号来进行权限的更改。 数字类型改变文件权限 Linux文件的基本权限9种，分别是owner/group/others三种身份各有自己的read/write/execute权限，文件的权限字符为“-rwxrwxrwx”，9个权限3个3个一组，各权限的分手对照表如下，r:4 w:2 x:1，每种身份的3个权限分数是需要累加的。 eg. -rwxrwx— 分数则是 owner = 4+2+1 = 7，group = 4+2+1 = 7，others = 0+0+0 = 0，所以该文件的权限数字就是770， 符号类型改变文件权限 user/group/others 3种身份使用u/g/o 表示这3种身份的权限，此外a代表全部的身份，读写操作的权限写作rwx， 命令名 身份 操作 权限 文件或目录名 chmod u/g/o/a +加入 -除去 =设置 r/w/x 文件或目录 示例： chmod u=rwx，go=rx .bashrc 设置文件.bashrc权限为 -rwxr-xr-x chmod a+w .bashrc 不知道原先文件属性，只是增加这个文件每个人都可以写入的权限 chmod a-x .bashrc 去掉所有人的可执行权限 目录或文件的权限意义 权限对文件的重要性 文件是实际含有数据的地方，包括一般文本文件、数据库内容文件、二进制可执行文件等，因此权限对于文件来说： r(read) : 可读取文件的实际内容 w(write) : 可编辑、新增或者是修改该文件的内容（但不含删除该文件） x(execute) : 该文件具有可以被系统执行的权限 文件的权限主要是针对文件的内容而言，因此w权限只有写入、编辑、修改文件的内容权限，不具备删除该文件的权限 权限对目录的重要性 文件是存放实际数据的所在，目录主要的内容是记录文件名列表，文件名与目录有强烈的关联，所以权限对于目录来说： r(read) : 表示具有读取目录结构列表的权限，可以查询该目录下的文件名数据，可以使用ls命令将目录内容列表展示 w(write) : 表示你具有更改该目录结构列表的权限：新建新的文件和目录、删除已经存在的文件和目录（不论文件权限）、将已存在的文件或目录重命名、转移该目录内的文件、目录位置x (access directory) : 表示用户能否进入该目录成为工作目录的用途，工作目录是指你所在的主文件夹，变换目录的命令是cd 工作目录对应命令的执行非常重要，如果你在某目录下不具有x的权限，那么你无法切换到该目录下，也就无法执行该目录下的任何命令，即使你具有该目录的r权限。要开放目录给任何人浏览时，应该至少给予r及x的权限，不然用户只能看到文件名，无法查阅文件内容（权限不足） Linux文件种类和扩展名文件种类 普通文件【 - 】 纯文本文件 二进制文件 数据格式文件 目录文件 【d】 第一个属性为 d 连接文件（link） 类似windows下面的快捷方式，第一个属性【l】 设备与设备文件与系统外设及存储相关的一些文件，通常集中在/dev目录，通常分为块设备文件和字符设备文件 块设备文件 ：存储数据，提供系统随机访问的接口设备，如硬盘、软盘等，第一个属性是【b】 字符设备文件 ：一些串行接口的接口设备，如键盘、鼠标等，第一个属性是【c】 套接字 数据接口文件，这种文件常用在网络上的数据连接，第一个属性是【s】，通常/var/run目录中能看到这种文件 管道 FIFO也是一个特殊的文件类型，主要目的是解决多个程序同时访问一个文件所造成的错误问题，第一个属性 【p】 Linux文件扩展名 Linux文件没有所谓的扩展名，一个Linux文件能不能被执行，与它的第一列的10个属性有关，与文件名扩展名无关。x代表可以被执行，但执行是否成功与文件内容有关。由于我们希望通过扩展名了解该文件是什么东西，所以我们还是会以适当的扩展名表示文件种类，常用扩展名如下： *.sh 脚本或批处理文件 Z / .tar / .tar.gz / .zip / *.tgz ：经过打包的压缩文件 .html / .php ： 网页相关文件 Linux文件长度限制（Ext2/Ext3文件系统） 单一文件或目录的最大容许文件名为255个字符 包含完整路径名称及目录(/) 的完整文件名为4096个字符 Linux文件名的限制 避免特殊字符，如 *?&lt;&gt;:;&amp;[]{}()|\’””`等 避免文件名开头 - 或 + 命名 Linux目录配置]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>文件权限</tag>
+        <tag>目录配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[首次登录与在线求助man page]]></title>
+    <url>%2F2017%2F11%2F28%2F5.%E9%A6%96%E6%AC%A1%E7%99%BB%E5%BD%95%E4%B8%8E%E5%9C%A8%E7%BA%BF%E6%B1%82%E5%8A%A9man%20page%2F</url>
+    <content type="text"><![CDATA[首次登录系统 Linux系统是多人多任务环境，所以随时都有很多任务在执行，不正常的关机可能造成文件系统错乱，造成数据的损毁，所以Linux主机常加挂一个不断电系统 会话是指可以使用不同的图形界面来操作整个Linux系统 隐藏文件就是开头为小数点的 基础命令的操作 显示时间与日期的命令 date 1date +%Y/%m/%d 显示日历的命令 cal ​ 1cal [[month] year] eg. cal 10 2009 简单好用的计算器 bc 123bc #进入bc工作环境quit #退出bc工作环境scale=n #n是小数点后的位数，默认只输出整数 命令行模式执行命令的种方式 该命令直接显示结果然后回到命令提示等待下一个命令的输入 进入该命令的环境，直到结束该命令才回到命令提示符的环境 重要的热键【Tab】【Ctrl】- c,【Ctrl】-d 【Tab】 Tab 在UNIX Like的Shell中，具有命令补全和文件补全的功能，避免我们打错命令和文件名 Tab接在一串命令的第一个命令后面，则为命令补全 Tab接在一串命令的第二个命令以后时，则为文件补全 【Ctrl】-c ：中断目前程序 【Ctrl】-d :键盘键入结束EOF,也可替代exit,如想要直接离开文字界面，按下ctrl-d就行了 man page(UNIX LIKE) man是manual(操作说明)简写，通过 man xxx可查看各命令操作说明,呼出的页面我们称为man page whatis xx = man -f xx //查找跟xx命令相关的说明文件 apropos xx = man -k xx //在系统的说明文件中，只要有xx就列出来 info page(LINUX) info命令查看命令说明，info page是将文件数据拆成一个个的段落，每个段落用自己的页面撰写，并且各页面还有跳转链接，每个独立的页面称为一个节点 在命令行界面，任何不知道的命令或文件格式，使用man或info查询 如果想架设一些其他服务或利用一整套软件达成某项功能时，查看/usr/share/doc下面是否有该服务的说明文档 超简单文本编辑器 nanonano 加上文件名就能打开一个旧文件或新文件 1234567891011nano text.txt #存在则修改，不存在则打开新文件Ctrl-G #在线帮助Ctrl-X #离开nano软件，若修改会提示是否需要保存Ctrl-O #保存文件，若有权限Ctrl-R #从其他文件读入数据，可以将某个文件的内容贴在本文件中Ctrl-W #查询字符串Ctrl-C #说明光标所在处的行数与列数等信息Ctrl-_ #直接输入行号，让光标快速移动到该行ALT-Y #校正语法功能开启或关闭ALT-M #可以支持鼠标来移动光标的功能指数符号代表Ctrl , M代表Alt 正确关机方法123456who #查看哪些在线netstat -a #查看网络联机状态ps -aux #查看后台执行程序sync #数据写入磁盘shutdown #关机reboot/halt/power off #重启、关机 数据同步写入磁盘syncLinux系统中，为了加快数据的读取速度，默认情况下某些已经加载内存中的数据将不会直接写回硬盘，而是先暂存在内存当中，这样如果一个数据重复改写，某些在内存中的数据由于还没有写入硬盘，速度上快很多，但万一系统因为某些特殊情况不正常关机，由于数据未被写入硬盘中，会造成数据的更新不正常。使用sync能将内存中尚未更新的数据写入硬盘中。shutdown/reboot/halt等命令均已在关机前进行了sync工具的调用。 惯用的关机命令：shutdownshutdown可以达成以下工作： 可以自由选择关机模式：是要关机、重启或进入单用户操作模式均可 可以设置关机时间：可以设置现在立即关机，也可以设置某一个特定的时间才关机 可以自定义关机消息：在关机之前，可以将自己设置的消息传送给在线用户 可以仅发出警告消息：有时可能你要进行一些测试，而不想让其他用户干扰，或者是明白的告诉用户某段时间要注意一下，这个时候可以用shutdown来通知用户，但却不是真的要关机 可以选择是否要用fask检查文件系统 123456789101112shutdown [-t秒] [-arkhncfF] 时间 [警告消息]参数：-t sec: -t后加秒数，也即“过几秒后关机”的意思-k : 不是真的要关机，只是发送警告消息出去-r : 在将系统的服务停掉之后就重启(常用)-h : 将系统的服务停掉后，立即关机(常用)-n : 不经过init程序，直接以shutdown的功能来关机-f : 关机并开机之后，强制略过fsck的磁盘检查-F : 系统重启之后，强制进行fsck的磁盘检查-c : 取消已经在进行的shutdown命令内容时间: 这个是一定要加入的参数，指定系统关机的时间，时间的范例下面会说明shutdown -h 10 'I will shutdown after 10 mins' 需要注意的是，时间参数务必加入命令中，否则shutdown会自动跳到run-level 1(就是单用户维护的登录情况) 123456shutdown -h now #立刻关机shutdown -h 20:25 #系统在今天的20:25分会关机，若在超过这个时间执行此命令，则隔天才关机shutdown -h +10 #系统过10分钟后自动关机shutdown -r now @系统立刻重启shutdown -r +30 'The system will reboot' #再过30分钟会重启，并显示后面的信息给所有在线用户shutdown -k now 'This system will reboot' #仅发出警告信件的参数，系统并不会关机 重启、关机：reboot，halt，poweroff123sync;sync;sync;reboot #重启shutdown -h now # shutdown可以依据目前已启动服务依次关闭各服务后关机、halt不理会目前系统状况执行硬件关机power -f 切换执行等级Linux共有7种执行等级，本章需要了解的4种执行等级 1234run level 0 :关机run level 3 :纯命令行模式run level 5 :含有图形界面模式run level 6 :重启 可以使用init处理各模式切换，也就是说，如果想要关机的话，除了上述的shutdown -h now 和poweroff以外，还可以使用 1init 0 开机过程问题排查 磁盘坏道或文件系统发生错误（数据损坏） 原因：1.断电或不正常关机所导致的文件系统发生错误 2.硬盘使用率过高或主机所在环境不良 解决方法： 如果根目录没有损坏，Ctrl+D单用户root账户维护，执行命令fsck /dev/sda7(fsck为文件系统检查命令，/dev/sda7为错误的分区，按实际情况填入)，这时屏幕开始修复磁盘，修复完成后，reboot重启。 如果根目录损坏，需要将硬盘拔掉，到另外一台Linux系统的计算机上，不挂载（mount）该硬盘，然后以root身份执行fsck /dev/sdb1(/dev/sdb1指的是硬盘设备文件名，按实际情况填入) 如果硬盘整个坏掉，救出能救的数据，换新硬盘 硬盘维护： 妥善保管硬盘 划分不同分区（建议 / 、/boot 、/usr 、/home 、/var） 忘记root密码 将系统重启，在读秒的时候按下任意键进入菜单，按e进入grup编辑模式，将光标移动到kernel，再按一次e进入该kernel的编辑界面，然后在出现的界面当中，最后方输入single,再按下Enter确定后，按b即可开机进入单用户维护模式，使用下面命令修改root密码 1passwd #2次输入新的密码，再reboot即可顺利修改root密码]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[安装CentOS与多重引导小技巧]]></title>
+    <url>%2F2017%2F11%2F28%2F4.%E5%AE%89%E8%A3%85CentOS%E4%B8%8E%E5%A4%9A%E9%87%8D%E5%BC%95%E5%AF%BC%E5%B0%8F%E6%8A%80%E5%B7%A7%2F</url>
+    <content type="text"><![CDATA[无论安装什么样的Linux，都应该事先规划好，例如分区、引导加载程序等 练习机安装的磁盘分区能有/,/boot,/home,/swap四个分区 调整开机启动设备的顺序需要重新启动并进入BIOS系统调整 CentOS支持2种安装方式：图形界面（GUI）方式安装和文字界面安装 安装过程中，可以创建磁盘阵列RAID 一般要求swap要是1.5-2倍物理内存量 尽量使用一般用户操作Linux,有必要再转身份为root]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[主机规划和磁盘分区]]></title>
+    <url>%2F2017%2F11%2F27%2F3.%E4%B8%BB%E6%9C%BA%E8%A7%84%E5%88%92%E5%92%8C%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%2F</url>
+    <content type="text"><![CDATA[Linux与硬件的搭配 各个组件或设备在Linux下面都是一个文件（一切皆文件） 硬件配置思考角度： 游戏机/工作机的考虑 性价比的考虑（主流级产品、省电） 支持性的考虑 各硬件设备在Linux中的文件名 设 备 设备在Linux内的文件名 IDE硬盘 /dev/hd[a-d] SCSI/SATA/USB硬盘 /dev/sd[a-p] U盘 /dev/sd[a-p] 与SATA相同 软驱 /dev/fd[0-1] 打印机 25针：/dev/lp[0-2] USB:/dev/usb/lp[0-15] 鼠标 USB:/dev/usb/mouse[0-15] PS2:/dev/psaux 当前CD ROM/DVD ROM /dev/cdrom 当前鼠标 /dev/mouse 磁盘分区 磁盘连接方式与设备文件名的关系 IDE设备可以被区分为主设备和从设备 | IDE | Master | Slave || :————-: | :——: | :——: || IDE(Primary) | /dev/hda | /dev/hdb || IDE2(Secondary) | /dev/hdc | /dev/hdd | SATA/USB/SCSI都是SCSI模块驱动的，Linux根据Linux内核检测到磁盘的顺序决定设备名 磁盘的组成复习 磁盘的组成（盘片、机械手臂、磁头、主轴马达），数据的写入在盘片上面 盘片上面又细分出扇区(Sector)和柱面(Cylinder)2种单位，其中每个扇区512Byte大 整个磁盘的第一个扇区特别重要，它记录了整块磁盘的重要信息，重要记录了： 主引导分区（Master Boot Record,MBR）:可以安装引导加载程序的地方，446byte 分区表（partition table）:记录整块磁盘分区的状态，有64byte 磁盘分区表 分区只是针对64byte的分区表进行设置 磁盘默认的分区表仅能写入4组分区信息， 这4组分区信息我们称为主(Primary)或扩展(Extended)分区 分区的最小单位为柱面，利用参考柱面号码的方式，在分区表64byte容量中，总共分为4组记录区，每组记录区记录了该区段的起始和结束的柱面号码，设备名分别为/dev/hda1、/dev/hda2、/dev/hda3、/dev/hda4 当系统写入磁盘时，会参考磁盘分区表，才能对整个分区进行数据的处理 分区优点：数据的安全性，系统性能的考虑 扩展分区的目的是使用额外的扇区来记录分区信息，扩展分区本身不能被拿来格式化 由扩展分区继续切出来的分区，被称为逻辑分区，设备文件名从/dev/hda5开始 逻辑分区的设备名称号码从5号开始 关于主分区、扩展分区。逻辑分区的特性的简单定义 主分区和控制分区总共最多可以有4个（硬盘的限制） 扩展分区最多只能有1个（操作系统的限制） 逻辑分区是扩展分区持续切割出来的分区 能格式化后作为数据访问的分区是主分区和逻辑分区，扩展分区无法格式化 逻辑分区数量依操作系统不同，在Linux中，IDE硬盘最多有59个逻辑分区（5-63号），SATA硬盘最多有11个逻辑分区（5-15号） 如果扩展分区被破坏，所有逻辑分区将会被删除 开机流程和主引导分区 开机流程到操作系统之前的动作： BIOS:开机主动执行的韧体（写入到硬件上的一个软件程序），识别第一个可开机的设备 MBR:第一个可开机设备的第一个扇区内的主引导分区块，内包含引导加载程序 引导加载程序(Boot Loader)：一支可读取内核文件来执行的软件 内核文件：开始操作系统的功能 由上可知，BIOS和MBR都是硬件本身会支持的功能，至于Boot Loader则是系统安装在MBR上的一套软件。由于MBR仅有446bytes，因此这个引导加载程序是非常小而完美的。 CMOS是记录各项硬件参数且嵌入到主板上面的存储器，BIOS就是在开机时候计算机系统主动执行的第一个程序，BIOS依据用户设置取得能开机的硬盘，并且到该硬盘里面去读取第一个扇区MBR位置。MBR这个仅有446bytes的磁盘容量里放置最基本的引导加载程序，这个引导加载程序的目的是再加载内核文件。 Boot Loader任务 提供菜单 : 用户选择不同的开机选项，多重引导的重要功能 载入内核程序 : 直接指向可开机的程序区段来开始操作系统 转交其他loader : 将引导加载功能转交给其他loader负责 多重引导 每个分区都有自己的启动扇区 图中的系统分区为第一及第二分区 loader只会认识自己的系统分区内的可开机内核文件，以及其它loader loader可直接指向或者间接将管理权转交给另一个管理程序 如果要安装多重引导，最好先安装windows再安装Linux。（Linux安装可以选择引导加载程序的安装位置，可手动设置菜单。windows会主动覆盖原引导加载程序） Linux安装模式下磁盘分区的选择 目录树结构：整个目录树结构最重要的就是那个根目录，整个根目录的表示方法就是一条斜线”/“ 文件系统与目录树的关系-挂载，所谓挂载就是利用一个目录当成进入点，将磁盘分区的数据放置在该目录下，也就是说进入该目录就可以读取该分区，这个操作我们称为挂载，那个进入点的目录我们称为挂载点]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux如何学习]]></title>
+    <url>%2F2017%2F11%2F27%2F2.how%20to%20learn%20Linux%2F</url>
+    <content type="text"><![CDATA[Linux当前应用角色 企业环境的应用 网络服务器 关键任务的应用（金融数据库、大型企业网管环境） 学术机构的高性能计算任务 个人环境的使用 桌面计算机 手持系统（PDA 、手机） 嵌入式系统 学习建议 计算机概论和硬件相关知识 先从Linux的安装和命令学起 Linux操作系统的基础技能 务必学会vi文本编辑器 shell和shell脚本的学习 一定要会软件管理 网络基础的建立 实践、实践、实践 Netman兄的建议 ​系统的设计文件目录，避免后期找不到文件 养成做记录的习惯 备份网上的任何好文章 学习的原动力 成就感 （分享、心得、参与讨论、协助回答问题） 兴趣 （Linux上有趣的事情很多） 重点回顾1. 有心向Linux学习者，先接触shell环境，包括正则表达式、管道命令与数据流重定向 2. 实践是学习Linux的最佳方案，空读书，遇到问题也不会自己处理 3. 学习Linux时，建立兴趣和成就感很重要]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux是什么]]></title>
+    <url>%2F2017%2F11%2F27%2F1.what%20is%20Linux%2F</url>
+    <content type="text"><![CDATA[Linux是什么Linux就是一套操作系统，包含内核与系统调用接口2层 Linux的内核是Linus Torvalds在1991年开发出来的Linux的优点 稳定的系统 免费或少许费用 多任务、多用户 用户和用户组的规划 相对比较不耗资源的系统 适合需要小内核程序的嵌入式系统 整合度佳且多样的图形用户界面 Linux的缺点 没有特定的支持厂商 游戏的支持度不足 专业软件的支持度不足 关于授权 Open Source(开放源码)：GNU/BSD/Apache License Close Source Freeware Shareware Linux内核开发分为2种版本，分别是稳定版本的偶数版，适用于商业与家用环境，eg. 2.6.x；一种是开发中版本，适合开发特殊功能的环境，eg. 2.5.x]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[VPS 上搭建 Hexo]]></title>
+    <url>%2F2017%2F11%2F27%2Fhexo%20with%20vps%2F</url>
+    <content type="text"><![CDATA[CentOS用yum方式安装nodejs和npm1yum -y install nodejs npm --enablerepo=epel VPS上安装Nginx服务及防火墙12345678yum install epel-release #添加 CenOS 7 的 epel 软件包yum install nginx #安装nginxsystemctl start nginx.service #启动Nginxsystemctl start firewalld #启动防火墙firewall-cmd --permanent --zone=public --add-service=http #添加规则允许HTTPSfirewall-cmd --permanent --zone=public --add-service=https #添加规则允许HTTPSfirewall-cmd --reloadsystemctl enable nginx.service #设置 Nginx 自动跟随系统启动 配置Nginx12345678$ vi /etc/nginx/conf.d/default.conf #替换为下述内容server &#123; root /var/www/blog/html; # 网站文件路径; server_name www.lijianzhong.top lijianzhong.top *.lijianzhong.top; # 域名,当然还得配置域名解析 location / &#123; try_files $uri $uri/ /index.html; &#125;&#125; 重启 Nginx 服务1234systemctl start nginx.servicesystemctl reload nginx.servicesystemctl restart nginx.servicesystemctl enable nginx.service 使用 rsync 将 Hexo 部署到 VPS 上 在 Hexo 目录下安装 rsync 1$ npm install hexo-deployer-rsync --save 根据 Hexo rsync 部署文档 在 Hexo 中的 _config.yml 中添加 Deploy 的配置，以下是我在自己项目中的配置代码 123456789deploy: type: rsync host: 你 VPS 的 IP 地址或者域名 user: root root: 你想将 Hexo 生成的静态文件存放在 VPS 中的目录 例如: /var/www/blog/html/ port: 你 VPS 的 ssh 端口号 delete: true verbose: true ignore_errors: false]]></content>
+      <categories>
+        <category>hexo,vps</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[VPS 上搭建 Hexo]]></title>
+    <url>%2F2017%2F11%2F27%2FVPS%20%E4%B8%8A%E6%90%AD%E5%BB%BA%20Hexo%2F</url>
+    <content type="text"><![CDATA[CentOS用yum方式安装nodejs和npm1yum -y install nodejs npm --enablerepo=epel VPS上安装Nginx服务及防火墙12345678yum install epel-release #添加 CenOS 7 的 epel 软件包yum install nginx #安装Nginxsystemctl start nginx.service #启动Nginxsystemctl start firewalld #启动防火墙firewall-cmd --permanent --zone=public --add-service=http #添加规则允许HTTPSfirewall-cmd --permanent --zone=public --add-service=https #添加规则允许HTTPSfirewall-cmd --reloadsystemctl enable nginx.service #设置 Nginx 自动跟随系统启动 配置Nginx12345678$ vi /etc/nginx/conf.d/default.conf #替换为下述内容server &#123; root /var/www/blog/html; # 网站文件路径; server_name www.lijianzhong.top lijianzhong.top *.lijianzhong.top; # 域名,当然还得配置域名解析 location / &#123; try_files $uri $uri/ /index.html; &#125;&#125; 重启 Nginx 服务1234systemctl start nginx.servicesystemctl reload nginx.servicesystemctl restart nginx.servicesystemctl enable nginx.service 使用 rsync 将 Hexo 部署到 VPS 上 在 Hexo 目录下安装 rsync 1$ npm install hexo-deployer-rsync --save 根据 Hexo rsync 部署文档 在 Hexo 中的 _config.yml 中添加 Deploy 的配置，以下是我在自己项目中的配置代码 123456789deploy: type: rsync host: 你 VPS 的 IP 地址或者域名 user: root root: 你想将 Hexo 生成的静态文件存放在 VPS 中的目录 例如: /var/www/blog/html/ port: 你 VPS 的 ssh 端口号 delete: true verbose: true ignore_errors: false]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS Duplicate Symbol静态库冲突解决]]></title>
+    <url>%2F2017%2F11%2F22%2FiOS%20Duplicate%20Symbol%E9%9D%99%E6%80%81%E5%BA%93%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%2F</url>
+    <content type="text"><![CDATA[集成某三方私有库时，报iOS Duplicate Symbol错误，相关解决方案如下… 处理步骤： 拷贝Duplicate Symbol信息到sublime 正则过滤获取冲突的文件 1234IFlyAudioSession.oIFlyCancelView.oIFlyContact.oIFlyDataDownloader.o... 查看库支持的框架类型、使用lipo命令分别将.a拆分成库所支持框架类型的.a库 12345lipo -info iflyMSC.framework/iflyMSClipo iflyMSC.framework/iflyMSC -thin armv7 -output iflyMSC_armv7.a;lipo iflyMSC.framework/iflyMSC -thin i386 -output iflyMSC_i386.a;lipo iflyMSC.framework/iflyMSC -thin x86_64 -output iflyMSC_x86_64.a;lipo iflyMSC.framework/iflyMSC -thin arm64 -output iflyMSC_arm64.a 使用ar命令删除各个.a的冲突的.o，可以使用正则按规则批量生成语句 1ar -d iflyMSC_arm64.a IFlyAudioSession.o;... 使用lipo命令将处理后的各个框架.a库合并 1lipo -create -output iflyMSC iflyMSC_armv7.a iflyMSC_i386.a iflyMSC_x86_64.a iflyMSC_arm64.a 检查合并后的库支持的架构类型是否正确 1lipo -info iflyMSC 将合并后的库（这里是iflyMSC）替换原framework里面的对应文件 知识点补充： sort -u可以对数据进行排序并去重 1sort -u fileName &gt; resultFileName ar -x 解压静态库 1ar x libxxx.a nm -A 在每个符号信息的前面打印所在对象文件名称 123456789101112nm [option(s)] [file(s)]有用的options:-A 在每个符号信息的前面打印所在对象文件名称；-C 输出demangle过了的符号名称；-D 打印动态符号；-l 使用对象文件中的调试信息打印出所在源文件及行号；-n 按照地址/符号值来排序；-u 打印出那些未定义的符号；eg. nm -A test.o 附件：脚本示例1234567891011#!/bin/shecho "查看库支持类型..."lipo -info ACLifeKit.framework/ACLifeKitecho "拆分.a库"lipo ACLifeKit.framework/ACLifeKit -thin armv7 -output ACLifeKit_armv7.alipo ACLifeKit.framework/ACLifeKit -thin arm64 -output ACLifeKit_arm64.aecho "移除在对应架构下的对应文件"ar -d ACLifeKit_armv7.a error_code.o;ar -d ACLifeKit_armv7.a future.o;ar -d ACLifeKit_armv7.a ivMemory.o;ar -d ACLifeKit_armv7.a once.o;ar -d ACLifeKit_armv7.a regex.o;ar -d ACLifeKit_armv7.a test.o;ar -d ACLifeKit_armv7.a thread.o;ar -d ACLifeKit_arm64.a error_code.o;ar -d ACLifeKit_arm64.a future.o;ar -d ACLifeKit_arm64.a ivMemory.o;ar -d ACLifeKit_arm64.a once.o;ar -d ACLifeKit_arm64.a regex.o;ar -d ACLifeKit_arm64.a test.o;ar -d ACLifeKit_arm64.a thread.o;echo "重新打包"lipo -create -output ACLifeKit ACLifeKit_armv7.a ACLifeKit_arm64.a 疑问上述脚本，ar -d多个连在一起的话，一次可能不能完全执行，部分ar -d执行失败，后续优化使用循环来处理，临时解决方案是将ar -d的语句执行3次。]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>framework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用脚本做项目资源清理]]></title>
+    <url>%2F2017%2F11%2F15%2F%E7%94%A8%E8%84%9A%E6%9C%AC%E5%81%9A%E9%A1%B9%E7%9B%AE%E8%B5%84%E6%BA%90%E6%B8%85%E7%90%86%2F</url>
+    <content type="text"><![CDATA[业务背景：因为公司业务需要，封装相关三方库供他人使用，但是代码删删减减后冗余无效资源较多，故探索了下使用脚本进行资源清理… 用脚本做项目资源清理 按行读取文件名，在资源文件夹下面查找文件名一致的文件，移动到目标文件夹 1234cat file_names.txt | while read linedo find resourceFolderPath -name $line -print | xargs -I &#123;&#125; cp -rf &#123;&#125; destinationFolderPathdone 递归遍历文件夹，输出文件夹下面所有文件的名字到目标文件 12345678910111213function read_dir()&#123; for file in `ls $1` do if [ -d $1"/"$file ] then read_dir $1"/"$file else echo $1"/"$file fi done&#125;touch destination_file.txtread_dir resourceFolderPath &gt; destination_file.txt]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>资源优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[搬瓦工安装SSR]]></title>
+    <url>%2F2017%2F11%2F15%2F%E6%90%AC%E7%93%A6%E5%B7%A5%E5%AE%89%E8%A3%85SSR%2F</url>
+    <content type="text"><![CDATA[业务背景： 为了科学上网，入手了搬瓦工，结果速度极慢，用于买的比较早的方案，没有直接装系统就支持ssr的功能，故自己折腾写把ssr安装起了… 搬瓦工安装SSR 升级glibc从2.12到2.14，因为安装ovz-bbr需要2.14及以上 1234567891011121314#CentOS 6 更新 glibc相关脚本wget http://ftp.gnu.org/gnu/glibc/glibc-2.15.tar.gzwget http://ftp.gnu.org/gnu/glibc/glibc-ports-2.15.tar.gztar -zxf glibc-2.15.tar.gztar -zxf glibc-ports-2.15.tar.gzmv glibc-ports-2.15 glibc-2.15/portsmkdir glibc-build-2.15cd glibc-build-2.15yum install gcc../glibc-2.15/configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/binmake all &amp;&amp; make install#查看当前glibc版本ldd --version 安装ovz-bbr 123wget https://raw.githubusercontent.com/kuoruan/shell-scripts/master/ovz-bbr/ovz-bbr-installer.shchmod +x ovz-bbr-installer.sh./ovz-bbr-installer.sh 判断BBR是否正常工作不能用Ping,直接看视频看速度就知道了，具体原因google ​]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>搬瓦工</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS打包Framework的简单步骤]]></title>
+    <url>%2F2017%2F11%2F15%2FiOS%E6%89%93%E5%8C%85Framework%E7%9A%84%E7%AE%80%E5%8D%95%E6%AD%A5%E9%AA%A4%2F</url>
+    <content type="text"><![CDATA[业务背景：因为公司业务需要，需要把部分功能独立出来，封装为Framework供第三方公司调用，封装的过程… 新建Target - Cocoa Touch Framework类型 工程Targets - Add - Cocoa Touch Framework 填写Product Name/Team/Organization Name，语言选择Objective-C，不选中Include Unit Tests, Project选择宿主工程，Embed in Application选择None，点击Finish。 创建好后可以看见工程文件夹添加了一个Product Name命名的文件夹，Targets也增加了一个新建的Target。 配置Target 去除符号表警告，Target - build settings - Generate debug symbols,设置为NO 项目需要，禁用bitcode, Target - build settings ,设置为NO 配置全局头文件引用，Target - Build Settings - Prefix Header 选中新建的Target，选择Build Settings，查找Mach-O Type, 修改Dynamic Library 为Static Library 修改Build Active Architecture only为NO,即生成支持所有架构的版本 将所有需要编译的.m/.mm文件添加编译Sources里, Target - Build Phases - Compile Sources 将所有需要包含的头文件添加到Target - Build Phases - Compile Sources 将需要暴露的头文件移动到Public,并在之前生成的头文件引入。 引入依赖的库，Target - Build Phases - Link Binary With Libraries。 引入依赖的资源 - Todo,目前使用独立bundle实现 添加依赖的pod资源]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>framework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS打包Bundle的简单步骤]]></title>
+    <url>%2F2017%2F11%2F15%2FiOS%E6%89%93%E5%8C%85bundle%E7%9A%84%E7%AE%80%E5%8D%95%E6%AD%A5%E9%AA%A4%2F</url>
+    <content type="text"><![CDATA[业务背景：因为公司业务需要，需要把部分功能独立出来，封装为Framework供第三方公司调用，其中资源部分需要单独提取出来封装为bundle,封装的过程… 新建Target - bundle 修改为iOS SDK Bundle ​ 添加xib、storyboard、资源]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>framework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS随机数生成算法探究]]></title>
+    <url>%2F2017%2F09%2F19%2FiOS%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%AE%97%E6%B3%95%E5%8F%8A%E5%BC%95%E5%8F%91%E7%9A%84%E6%80%A7%E8%83%BD%E7%A0%94%E7%A9%B6%2F</url>
+    <content type="text"><![CDATA[知识储备（相关随机数函数） rand()和random()实际并不是一个真正的伪随机数发生器，在使用之前需要先初始化随机种子，否则每次生成的随机数一样。 arc4random（）是一个真正的伪随机算法，不需要生成随机种子，因为第一次调用的时候就会自动生成。这个函数生成的随机数范围比较大（它的范围是rand()的两倍），需要用取模的算法对随机值进行限制。 arc4random_uniform（x），可以用来产生0～(x-1)范围内的随机数 123456789srand((unsigned)time(0)); //不加这句每次产生的随机数不变int i = rand() % 5;srandom(time(0));int i = random() % 5;int i = arc4random() % 5 ;int i = arc4random_uniform(5); 产生背景：因为业务需要，需要构造一个算法在iOS端产生随机数，研究了相关实现，封装了以下2种实现： 看着好看的 12345678+ (NSString *)createRandomString:(int)length&#123; if (length &lt;= 0) &#123; return @&quot;&quot;; &#125; NSUInteger result = arc4random_uniform(pow(10, length)); NSString *resultString = [NSString stringWithFormat:@&quot;%0*lu&quot;,length,(unsigned long)result]; return resultString;&#125; ​ 看着不好看的 123456789+ (NSString *)createRandomString:(NSUInteger)length&#123; if (length &lt;= 0) &#123; return @&quot;&quot;; &#125; char cradom[length]; for (int i = 0; i &lt; length; cradom[i++] = &apos;0&apos; + arc4random_uniform(9)) ; return [[NSString alloc] initWithBytes:cradom length:length encoding:NSUTF8StringEncoding];&#125; 猜测效率：初看发现第二种实现里面有for循环会更慢，顺手写了个测试用例，2者分别在iphone6上执行10w次(参数传6-生成6位随机数)，结果猜测错误： 1234第一种方案结果： Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.310, relative standard deviation: 1.574%, values: [0.318568, 0.308472, 0.308379, 0.310920, 0.308342, 0.314369, 0.316341, 0.304675, 0.303726, 0.304600], 第二种方案结果：Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.090, relative standard deviation: 20.541%, values: [0.144661, 0.083284, 0.083459, 0.083986, 0.083396, 0.083264, 0.083467, 0.083202, 0.083524, 0.082840], 既然猜测错误，那么开始查找原因，代码相当简单，猜测是stringWithFormat那行或者arc4random_uniform()函数引起，分别注释2者查看执行时间: 1234注释掉arc4random_uniform()函数：Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.277, relative standard deviation: 3.134%, values: [0.302329, 0.272975, 0.272465, 0.275769, 0.273284, 0.272742, 0.275212, 0.274216, 0.272888, 0.273297], 注释掉stringWithFormat函数：Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.022, relative standard deviation: 26.238%, values: [0.039476, 0.024348, 0.020075, 0.020054, 0.019855, 0.020028, 0.019932, 0.019763, 0.019982, 0.019884], 问题定位成功，是函数stringWithFormat那行引起的，结论如下： stringWithFormat/initWithFormat本身不是很耗性能，但如果在for循环中,特别循环次数比较多的时候，可以考虑用C函数来提高相关性能（sprintf、snprintf 、 asprintf ）,修改后的代码如下： 1234567891011+ (NSString *)createRandomString:(NSUInteger)length&#123; if (length &lt;= 0) &#123; return @&quot;&quot;; &#125; NSUInteger result = arc4random_uniform(pow(10, length)); char *buffer = (char *) malloc(length); sprintf(buffer, &quot;%0*lu&quot;, (int)length, (unsigned long)result); NSString *resultString = [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding]; free(buffer); return resultString;&#125; 性能测试： 1Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.148, relative standard deviation: 3.707%, values: [0.139766, 0.152092, 0.145130, 0.141498, 0.148388, 0.157696, 0.143160, 0.154644, 0.148861, 0.150025], 大概性能提升了2倍多，还是比第二种实现的性能差些。malloc和free耗费了一定时间，继续努力： 12345678910+ (NSString *)createRandomString:(NSUInteger)length&#123; if (length &lt;= 0) &#123; return @&quot;&quot;; &#125; NSUInteger result = arc4random_uniform(pow(10, length)); char cString[length]; sprintf (cString, &quot;%0*lu&quot;, (int)length,(unsigned long)result); NSString* resultString = [[NSString alloc] initWithUTF8String:cString]; return resultString;&#125; 性能测试： 1Test Case &apos;xxx&apos; measured [Time, seconds] average: 0.078, relative standard deviation: 2.616%, values: [0.084383, 0.078385, 0.077887, 0.077609, 0.077381, 0.077292, 0.077276, 0.077900, 0.077413, 0.077609], 性能比第二种稍高点，也在我们程序的接受范围内了，那就先这样吧！ 参考资料 iOS NSString stringWithFormat: Performance (Objective-C). why NSString stringWithFormat is slow]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>arithmetic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[转换iOS app格式文件为ipa 格式文件(Convert iOS app to ipa)]]></title>
+    <url>%2F2017%2F09%2F17%2F%E8%BD%AC%E6%8D%A2iOS%20app%E6%A0%BC%E5%BC%8F%E4%B8%BAipa(Convert%20iOS%20app%20to%20ipa)%2F</url>
+    <content type="text"><![CDATA[业务背景：在iTunes 12.7不再内置App Store，以前内网测试常依赖其转换app文件为ipa功能没法用了，只是预览测试包没必要运行脚本打包，所以研究了写了个小脚本，直接将app文件转换为ipa文件… 脚本如下： 12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/shappName=&quot;替换为你app的名称,eg. Sky&quot;appDetailName=$&#123;appName&#125;&quot;.app&quot;appPayloadName=$&#123;appName&#125;&quot;/Payload&quot;appCopyToPayloadPath=$&#123;appPayloadName&#125;&quot;/&quot;$&#123;appDetailName&#125;appOriginPath=&quot;替换为你app文件的绝对路径,eg. xxx/Library/Developer/Xcode/DerivedData/xxx/Build/Products/Debug-iphoneos/Sky.app&quot;appIconPath=&quot;图标文件绝对路径，eg. xxx/Icon.png&quot;if [ ! -x &quot;$appOriginPath&quot; ]; then echo &quot;打包路径不存在，程序即将退出&quot; exit 0fiif [ -x &quot;$appName&quot; ] then rm -rf &quot;$appName&quot; echo &quot;Remove folder $appName&quot;else echo &quot;folder $appName does not exist&quot;fiecho &quot;make dir $appName&quot;mkdir &quot;$appName&quot;mkdir &quot;$appPayloadName&quot;if [ -x &quot;$appDetailName&quot; ] then echo &quot;Remove file $appDetailName&quot; rm -rf &quot;$appDetailName&quot;fiecho &quot;copy $appDetailName ...&quot;cp -r &quot;$appOriginPath&quot; &quot;$appDetailName&quot;echo &quot;copy $appName to payload&quot;#替换xxx为app名称cp -r &quot;$appDetailName&quot; &quot;$appCopyToPayloadPath&quot;echo &quot;copy icon to iTunesArtwork&quot;cp &quot;$appIconPath&quot; $&#123;appName&#125;&quot;/iTunesArtwork&quot;cd &quot;$appName&quot;echo &quot;start zip...&quot;zip -r $&#123;appName&#125;&quot;.ipa&quot; Payload iTunesArtworkexit 0 注意需要替换调对应的文件路径，对应的文件会生成在脚本相同的路径下，所以建议新建一个文件夹，在文件夹下运行该脚本]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>CocoaPods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[发布自己的代码到CocoaPods]]></title>
+    <url>%2F2016%2F03%2F25%2F%E5%8F%91%E5%B8%83%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%A3%E7%A0%81%E5%88%B0CocoaPods%2F</url>
+    <content type="text"><![CDATA[sudo gem install cocoapodspod setup pod trunk register 673637753@qq.com jzleepod trunk meset the new version to 0.1.0set the new tag to 0.1.0pod trunk push LJKit.podspec 参考资料 使用Cocoapods创建私有podspec Publish Your Pods on CocoaPods with Trunk]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>CocoaPods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CocoaPods版本升级]]></title>
+    <url>%2F2016%2F03%2F24%2FCocoaPods%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%2F</url>
+    <content type="text"><![CDATA[和往常一样使用CocoaPods安装PodFile时，pod &#39;GDataXML-HTML&#39;, &#39;~&gt; 1.3.0&#39; 安装1.3.0版本提示无法找到，本地使用Pod Search 发现只能搜索到1.2.0版本，但是同事的确使用的1.3.0版本，问题估计为CocoaPods版本未升级查看CocoaPods版本 12$ pod --version0.32.0 确实需要更新了 命令行执行更新 ###命令行更新（安装）步骤【更新】 12345678$ sudo gem update --system // 先更新gem，国内需要切换源$ gem sources --remove https://rubygems.org/$ gem sources -a https://ruby.taobao.org/$ gem sources -l\*\*\* CURRENT SOURCES \*\*\*https://ruby.taobao.org/$ sudo gem install cocoapods // 安装cocoapods$ pod setup 和安装的过程一致，再次查看版本 12$ pod --version0.39.0]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>CocoaPods</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git log的使用]]></title>
+    <url>%2F2016%2F03%2F24%2Fabout%20git%20log%2F</url>
+    <content type="text"><![CDATA[git log默认不用任何参数的话， 会按提交时间列出所有的更新，最近的更新排在最上面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。 git log 有许多选项可以帮助你搜寻你所要找的提交， 接下来我们介绍些最常用的。 一个常用的选项是 -p，用来显示每次提交的内容差异。 你也可以加上 -2 来仅显示最近两次提交： git log -p -2 该选项除了显示基本信息之外，还在附带了每次 commit 的变化。 当进行代码审查，或者快速浏览某个搭档提交的 commit 所带来的变化的时候，这个参数就非常有用了。 你也可以为 git log 附带一系列的总结性选项。 比如说，如果你想看到每次提交的简略的统计信息，你可以使用 –stat 选项： git log --stat 正如你所看到的，–stat 选项在每次提交的下面列出额所有被修改过的文件、有多少文件被修改了以及被修改过的文件的哪些行被移除或是添加了。 在每次提交的最后还有一个总结。 另外一个常用的选项是 –pretty。 这个选项可以指定使用不同于默认格式的方式展示提交历史。 这个选项有一些内建的子选项供你使用。 比如用 oneline 将每个提交放在一行显示，查看的提交数很大时非常有用。 另外还有 short，full 和 fuller 可以用，展示的信息或多或少有些不同，请自己动手实践一下看看效果如何。 git log --pretty=oneline 但最有意思的是 format，可以定制要显示的记录格式。 这样的输出对后期提取分析格外有用 — 因为你知道输出的格式不会随着Git的更新而发生改变： git log --pretty=format:&quot;%h - %an, %ar : %s&quot;Table 2-1 列出了常用的格式占位符写法及其代表的意义。 Table 2-1. git log –pretty=format 选项 说明 %H 提交对象（commit）的完整哈希字串 %h 提交对象的简短哈希字串 %T 树对象（tree）的完整哈希字串 %t 树对象的简短哈希字串 %P 父对象（parent）的完整哈希字串 %p 父对象的简短哈希字串 %an 作者（author）的名字 %ae 作者的电子邮件地址 %ad 作者修订日期（可以用 –date= 选项定制格式） %ar 作者修订日期，按多久以前的方式显示 %cn 提交者(committer)的名字 %ce 提交者的电子邮件地址 %cd 提交日期 %cr 提交日期，按多久以前的方式显示 %s 提交说明 在这里 作者指的是实际作出修改的人，提交者指的是最后将此工作成果提交到仓库的人。 所以，当你为某个项目发布补丁，然后某个核心成员将你的补丁并入项目时，你就是作者，而那个核心成员就是提交者. 当 oneline 或 format 与另一个 log 选项 –graph 结合使用时尤其有用。 这个选项添加了一些ASCII字符串来形象地展示你的分支、合并历史： git log --pretty=format:&quot;%h %s&quot; --graph git log的常用选项 -p 按补丁格式显示每个更新之间的差异。 --stat 显示每次更新的文件修改统计信息。 --shortstat 只显示 –stat 中最后的行数修改添加移除统计。 --name-only 仅在提交信息后显示已修改的文件清单。 --name-status 显示新增、修改、删除的文件清单。 --abbrev-commit 仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。 --relative-date 使用较短的相对时间显示（比如，“2 weeks ago”）。 --graph 显示 ASCII 图形表示的分支合并历史。 --pretty 使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。 限制输出长度 除了定制输出格式的选项之外，git log 还有许多非常实用的限制输出长度的选项，也就是只输出部分提交信息。 之前你已经看到过 -2 了，它只显示最近的两条提交， 实际上，这是 - 选项的写法，其中的 n 可以是任何整数，表示仅显示最近的若干条提交。 不过实践中我们是不太用这个选项的，Git 在输出所有提交时会自动调用分页程序，所以你一次只会看到一页的内容。 另外还有按照时间作限制的选项，比如 --since 和 --until 也很有用。 例如，下面的命令列出所有最近两周内的提交：git log --since=2.weeks 这个命令可以在多种格式下工作，比如说具体的某一天 “2008-01-15”，或者是相对地多久以前 “2 years 1 day 3 minutes ago”。 还可以给出若干搜索条件，列出符合的提交。 用 --author 选项显示指定作者的提交，用 --grep 选项搜索提交说明中的关键字。 （请注意，如果要得到同时满足这两个选项搜索条件的提交，就必须用 --all-match 选项。否则，满足任意一个条件的提交都会被匹配出来） 另一个非常有用的筛选选项是 -S，可以列出那些添加或移除了某些字符串的提交。 比如说，你想找出添加或移除了某一个特定函数的引用的提交，你可以这样使用： git log -Sfunction_name 最后一个很实用的 git log 选项是路径(path)， 如果只关心某些文件或者目录的历史提交，可以在 git log 选项的最后指定它们的路径。 因为是放在最后位置上的选项，所以用两个短划线（–）隔开之前的选项和后面限定的路径名。 git log限制输出的选项 -(n) 仅显示最近的 n 条提交 --since, --after 仅显示指定时间之后的提交。 --until, --before 仅显示指定时间之前的提交。 --author 仅显示指定作者相关的提交。 --committer 仅显示指定提交者相关的提交。 --grep 仅显示含指定关键字的提交 -S 仅显示添加或移除了某个关键字的提交 来看一个实际的例子，如果要查看 Git 仓库中，2008 年 10 月期间，Junio Hamano 提交的但未合并的测试文件，可以用下面的查询命令： 12345678git log --pretty=&quot;%h - %s&quot; --author=gitster --since=&quot;2008-10-01&quot; \ --before=&quot;2008-11-01&quot; --no-merges -- t/5610e3b - Fix testcase failure when extended attributes are in useacd3b9e - Enhance hold_lock_file_for_&#123;update,append&#125;() APIf563754 - demonstrate breakage of detached checkout with symbolic link HEADd1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths51a94af - Fix &quot;checkout --track -b newbranch&quot; on detached HEADb0ad11e - pull: allow &quot;git pull origin $something:$current_branch&quot; into an unborn branch 在近40000条提交中，上面的输出仅列出了符合条件的6条记录。 参考资料 Documentation]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac Hexo 的安装]]></title>
+    <url>%2F2016%2F03%2F11%2Finstall%20hexo%20on%20mac%2F</url>
+    <content type="text"><![CDATA[Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 硬件环境：mac mini 软件环境：Yosemite 10.10.5 安装Node到Node.js官网下载对应平台的安装包，一路安装即可，我使用的是node-v4.3.1。安装完成后在终端使用 npm -v查看是否安装成功 安装hexo12npm cache clean #清理cache sudo npm install -g hexo #安装hexo Hexo相关操作12345hexo init [folder] #新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。npm install hexo --save npm install hexo-server --save #安装serverhexo generate(简写：hexo g) #构建静态页面，-d, --deploy文件生成后立即部署网站hexo server(简写：hexo s) #启动本地服务器 当终端打印 INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 代表本地启动成功，可以在浏览器输入查看，正常情况下应该是最原始的画面，但是我看到的是：白板和Cannot GET / 几个字，如果这样，执行npm install后重新生成部署 Hexo常用命令123456hexo new [layout] &lt;title&gt; #新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。hexo deploy(简写：hexo d) #部署网站,-g, --generate 部署之前预先生成静态文件hexo clean #清除缓存文件 (db.json) 和已生成的静态文件 (public)。hexo version #显示 Hexo 版本hexo list &lt;type&gt;#列出网站资料hexo publish [layout] &lt;filename&gt; #发表草稿 参考hexo参考文档 markdown参考文档]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Mac Hexo 的安装]]></title>
+    <url>%2F2016%2F03%2F11%2FMac-Hexo-%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 硬件环境：mac mini软件环境：Yosemite 10.10.5 ##环境准备 安装Node到Node.js官网下载对应平台的安装包，一路安装即可，我使用的是node-v4.3.1。安装完成后在终端使用1npm -v 命令查看是否安装成功 安装命令 清理cache 1npm cache clean 安装hexo 1sudo npm install -g hexo 初始化hexo 1hexo init &lt;path&gt; 或者你可以直接cd到你指定的目录，执行1hexo init cd 到你的init目录，执行如下命令，生成静态页面至hexo\public\目录。 1hexo generate 我在这里遇到报错，先执行以下命令才顺利完成： 1npm install hexo --save 安装server 1npm install hexo-server --save 本地启动 1hexo server 当终端打印 INFO Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop. 代表本地启动成功，可以在浏览器输入查看，正常情况下应该是最原始的画面，但是我看到的是：白板和Cannot GET / 几个字 原因：由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令： 1npm install 这个时候再重新生成静态文件，命令： 1hexo generate （或hexo g） 启动本地服务器： 1hexo server （或hexo s）]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS运行时Runtime学习笔记]]></title>
+    <url>%2F2016%2F03%2F10%2FiOS%E8%BF%90%E8%A1%8C%E6%97%B6Runtime%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Objective-C语言是一门动态语言，它将很多静态语言在编译和链接时期做的事放到了运行时来处理。这种动态语言的优势在于：我们写代码时更具灵活性，如我们可以把消息转发给我们想要的对象，或者随意交换一个方法的实现等。这种特性意味着Objective-C不仅需要一个编译器，还需要一个运行时系统来执行编译的代码。对于Objective-C来说，这个运行时系统就像一个操作系统一样：它让所有的工作可以正常的运行。这个运行时系统即Objc Runtime。Objc Runtime其实是一个Runtime库，它基本上是用C和汇编写的，这个库使得C语言有了面向对象的能力。 ##Runtime库做了什么？Runtime库主要做下面几件事： 封装：在这个库中，对象可以用C语言中的结构体表示，而方法可以用C函数来实现，另外再加上了一些额外的特性。这些结构体和函数被runtime函数封装后，我们就可以在程序运行时创建，检查，修改类、对象和它们的方法了。找出方法的最终执行代码：当程序执行[object doSomething]时，会向消息接收者(object)发送一条消息(doSomething)，runtime会根据消息接收者是否能响应该消息而做出不同的反应。这将在后面详细介绍。 Runtime中，类是如何实现的？类与对象基础数据结构 ####ClassObjective-C类是由Class类型来表示的，它实际上是一个指向objc_class结构体的指针。它的定义如下： 1typedef struct objc_class *Class; 查看objc/runtime.h中objc_class结构体的定义如下： 12345678910111213141516171819202122232425262728293031struct objc_class &#123; Class isa OBJC_ISA_AVAILABILITY;#if !__OBJC2__ Class super_class OBJC2_UNAVAILABLE; // 父类 const char *name OBJC2_UNAVAILABLE; // 类名 long version OBJC2_UNAVAILABLE; // 类的版本信息，默认为0 long info OBJC2_UNAVAILABLE; // 类信息，供运行期使用的一些位标识 long instance_size OBJC2_UNAVAILABLE; // 该类的实例变量大小 struct objc_ivar_list *ivars OBJC2_UNAVAILABLE; // 该类的成员变量链表 struct objc_method_list **methodLists OBJC2_UNAVAILABLE; // 方法定义的链表 struct objc_cache *cache OBJC2_UNAVAILABLE; // 方法缓存 struct objc_protocol_list *protocols OBJC2_UNAVAILABLE; // 协议链表#endif&#125; OBJC2_UNAVAILABLE; 在这个定义中，下面几个字段是我们感兴趣的 isa：需要注意的是在Objective-C中，所有的类自身也是一个对象，这个对象的Class里面也有一个isa指针，它指向metaClass(元类)，我们会在后面介绍它。 super_class：指向该类的父类，如果该类已经是最顶层的根类(如NSObject或NSProxy)，则super_class为NULL。 cache：用于缓存最近使用的方法。一个接收者对象接收到一个消息时，它会根据isa指针去查找能够响应这个消息的对象。在实际使用中，这个对象只有一部分方法是常用的，很多方法其实很少用或者根本用不上。这种情况下，如果每次消息来时，我们都是methodLists中遍历一遍，性能势必很差。这时，cache就派上用场了。在我们每次调用过一个方法后，这个方法就会被缓存到cache列表中，下次调用的时候runtime就会优先去cache中查找，如果cache没有，才去methodLists中查找方法。这样，对于那些经常用到的方法的调用，提高了调用的效率。 version：我们可以使用这个字段来提供类的版本信息。这对于对象的序列化非常有用，它可是让我们识别出不同类定义版本中实例变量布局的改变。 针对cache，我们用下面例子来说明其执行过程： 1NSArray *array = [[NSArray alloc] init]; 其流程是： [NSArray alloc]先被执行。因为NSArray没有+alloc方法，于是去父类NSObject去查找。 检测NSObject是否响应+alloc方法，发现响应，于是检测NSArray类，并根据其所需的内存空间大小开始分配内存空间，然后把isa指针指向NSArray类。同时，+alloc也被加进cache列表里面。 接着，执行-init方法，如果NSArray响应该方法，则直接将其加入cache；如果不响应，则去父类查找。 在后期的操作中，如果再以[[NSArray alloc] init]这种方式来创建数组，则会直接从cache中取出相应的方法，直接调用。 ####objc_object与idobjc_object是表示一个类的实例的结构体，它的定义如下(objc/objc.h)： 1234567struct objc_object &#123; Class isa OBJC_ISA_AVAILABILITY;&#125;;typedef struct objc_object *id; 可以看到，这个结构体只有一个字体，即指向其类的isa指针。这样，当我们向一个Objective-C对象发送消息时，运行时库会根据实例对象的isa指针找到这个实例对象所属的类。Runtime库会在类的方法列表及父类的方法列表中去寻找与消息对应的selector指向的方法。找到后即运行这个方法。 当创建一个特定类的实例对象时，分配的内存包含一个objc_object数据结构，然后是类的实例变量的数据。NSObject类的alloc和allocWithZone:方法使用函数class_createInstance来创建objc_object数据结构。 另外还有我们常见的id，它是一个objc_object结构类型的指针。它的存在可以让我们实现类似于C++中泛型的一些操作。该类型的对象可以转换为任何一种对象，有点类似于C语言中void *指针类型的作用。]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>runtime</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iOS多线程下的数据安全]]></title>
+    <url>%2F2016%2F03%2F10%2FiOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%2F</url>
+    <content type="text"><![CDATA[多线程的安全隐患下面是一个模拟的会导致奔溃的程序代码 1234567891011121314151617181920- (void)viewDidLoad&#123; [self configData];&#125;- (void)configData&#123; self.dataSource = [NSMutableArray array]; for (int i = 0; i &lt; 100; i++) &#123; [self.dataSource addObject:[NSString stringWithFormat:@&quot;Obj - %i&quot;, i]]; &#125;&#125;- (IBAction)start:(id)sender&#123;dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123; for (int i = 0; i &lt; self.dataSource.count; i++) &#123; [NSThread sleepForTimeInterval:0.05]; NSLog(@&quot;%@&quot;, self.dataSource[i]); &#125; &#125;);&#125;- (IBAction)removeAllObjs:(id)sender&#123; [self.dataSource removeAllObjects];&#125; 用户在点击start按钮后，会在一个全局的queue里面对构造的数据进行遍历，为了模拟实际场景中网络请求的时延，每次循环让当前线程休息0.05s,这样在遍历的过程中，如果用户点击了移除按钮，此时self.dataSource[i]执行时，因为数组已经被清空了，会报数组越界的错误。 ####如何解决在多线程操作过程中，如何保护共享数据，其实已经是一个众所周知的事情了，这里总结下自己试过的处理方法： @synchronized NSLock dispatch_semaphore_signal dispatch_barrier_async 下面是使用@synchronized修复的示例： 1234567891011121314151617- (IBAction)start:(id)sender&#123;dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123; @synchronized(self.dataSource) &#123; for (int i = 0; i &lt; self.dataSource.count; i++) &#123; [NSThread sleepForTimeInterval:0.05]; NSLog(@&quot;%@&quot;,self.dataSource[i]); &#125; &#125; &#125;);&#125;- (IBAction)removeAllObjs:(id)sender&#123; @synchronized(self.dataSource) &#123; [self.dataSource removeAllObjects]; &#125;&#125; 下面是使用NSLock修复的示例： 123456789101112131415161718 //声明一个全局变量 NSRecursiveLock* rLock = [[NSRecursiveLock alloc] init]; - (IBAction)start:(id)sender&#123;dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123; [rLock lock]; for (int i = 0; i &lt; self.dataSource.count; i++) &#123; [NSThread sleepForTimeInterval:0.05]; NSLog(@&quot;%@&quot;, self.dataSource[i]); &#125; [rLock unlock]; &#125;);&#125;- (IBAction)removeAllObjs:(id)sender&#123; [rLock lock]; [self.dataSource removeAllObjects]; [rLock unlock];&#125; 下面是使用dispatch_semaphore_signal修复的示例： 1234567891011121314151617181920//声明全局变量dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);- (IBAction)start:(id)sender&#123;dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123; dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER); for (int i = 0; i &lt; self.dataSource.count; i++) &#123; [NSThread sleepForTimeInterval:0.05]; NSLog(@&quot;%@&quot;,self.dataSource[i]); &#125; dispatch_semaphore_signal(semaphore); &#125;);&#125;- (IBAction)removeAllObjs:(id)sender&#123; dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER); [self.dataSource removeAllObjects]; dispatch_semaphore_signal(semaphore);&#125; 下面是使用dispatch_barrier_async修复的示例： 1234567891011121314151617//声明全局变量dispatch_queue_t concurrentQueue = dispatch_queue_create(&quot;com.threadsafe.sing&quot;, DISPATCH_QUEUE_CONCURRENT);- (IBAction)start:(id)sender&#123; dispatch_async(concurrentQueue, ^&#123; for (int i = 0; i &lt; self.dataSource.count; i++) &#123; [NSThread sleepForTimeInterval:0.05]; NSLog(@&quot;%@&quot;, self.dataSource[i]); &#125; &#125;);&#125;- (IBAction)removeAllObjs:(id)sender&#123; dispatch_barrier_async(concurrentQueue, ^&#123; [self.dataSource removeAllObjects]; &#125;);&#125;]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>multi-thread</tag>
+      </tags>
+  </entry>
+</search>
