@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="木子的博客">
 <meta property="og:description" content="几大区域简介 栈区（stack） 由编译器管理（分配释放） 存放函数参数值、局部变量的值（函数中的基本类型） 栈区的操作方式类似数据结构的栈（先进后出）   堆区（heap） 由程序员管理（分配释放），若程序员不释放，程序结束时可能由系统回收 存放程序员new出来的对象 堆的操作方式和数据结构中的堆不同，操作方式类似于链表   全局区（static） 由编译器管理（分配释放），程序结束后由系统释放">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-06T12:44:14.253Z">
+<meta property="og:updated_time" content="2018-06-06T12:46:31.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1.iOS内存的几大区域">
 <meta name="twitter:description" content="几大区域简介 栈区（stack） 由编译器管理（分配释放） 存放函数参数值、局部变量的值（函数中的基本类型） 栈区的操作方式类似数据结构的栈（先进后出）   堆区（heap） 由程序员管理（分配释放），若程序员不释放，程序结束时可能由系统回收 存放程序员new出来的对象 堆的操作方式和数据结构中的堆不同，操作方式类似于链表   全局区（static） 由编译器管理（分配释放），程序结束后由系统释放">
@@ -422,6 +422,7 @@
 </ol>
 </li>
 </ol>
+<a id="more"></a>
 <h3 id="例子程序"><a href="#例子程序" class="headerlink" title="例子程序"></a>例子程序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line"><span class="keyword">char</span> *p1;  <span class="comment">//全局未初始化区</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> b; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> s[] = <span class="string">"abc"</span>; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> *p2; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> *p3 = <span class="string">"123456"</span>; <span class="comment">//123456在文字常量区，p3在栈区</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> c = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line">    p1 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>);  <span class="comment">//堆区</span></span><br><span class="line">    p2 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">20</span>);  <span class="comment">//堆区</span></span><br><span class="line">    <span class="built_in">strcpy</span>(p1,<span class="string">"123456"</span>);      <span class="comment">//123456在文字常量区，编译器可能会将它与p3所指向的"123456"优化为1个地方</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="几大区域详解"><a href="#几大区域详解" class="headerlink" title="几大区域详解"></a>几大区域详解</h3><ul>
 <li>申请方式<ul>
