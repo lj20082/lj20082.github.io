@@ -252,6 +252,262 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2018/06/06/1-iOS内存的几大区域/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="木子的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/06/1-iOS内存的几大区域/" itemprop="url">1.iOS内存的几大区域</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-06T20:41:12+08:00">
+                2018-06-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/内存管理/" itemprop="url" rel="index">
+                    <span itemprop="name">内存管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/06/06/1-iOS内存的几大区域/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/06/1-iOS内存的几大区域/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/06/06/1-iOS内存的几大区域/" class="leancloud_visitors" data-flag-title="1.iOS内存的几大区域">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,195
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="几大区域简介"><a href="#几大区域简介" class="headerlink" title="几大区域简介"></a>几大区域简介</h3><ol>
+<li>栈区（stack）<ol>
+<li>由编译器管理（分配释放）</li>
+<li>存放函数参数值、局部变量的值（函数中的基本类型）</li>
+<li>栈区的操作方式类似数据结构的栈（先进后出）</li>
+</ol>
+</li>
+<li>堆区（heap）<ol>
+<li>由程序员管理（分配释放），若程序员不释放，程序结束时可能由系统回收</li>
+<li>存放程序员new出来的对象</li>
+<li>堆的操作方式和数据结构中的堆不同，操作方式类似于链表</li>
+</ol>
+</li>
+<li>全局区（static）<ol>
+<li>由编译器管理（分配释放），程序结束后由系统释放</li>
+<li>存放全局变量和静态变量</li>
+<li>由2块区域组成全局区（静态区），一块是存放未初始化全局变量和静态变量，另一块是初始化完成的全局变量和静态变量，这2块区域是相邻的</li>
+</ol>
+</li>
+<li>文字常量区<ol>
+<li>由编译器管理（分配释放），程序结束由系统释放</li>
+<li>存放常量字符串</li>
+</ol>
+</li>
+<li>程序代码区<ol>
+<li>存放函数的二进制代码</li>
+</ol>
+</li>
+</ol>
+<h3 id="例子程序"><a href="#例子程序" class="headerlink" title="例子程序"></a>例子程序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line"><span class="keyword">char</span> *p1;  <span class="comment">//全局未初始化区</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> b; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> s[] = <span class="string">"abc"</span>; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> *p2; <span class="comment">//栈区</span></span><br><span class="line">    <span class="keyword">char</span> *p3 = <span class="string">"123456"</span>; <span class="comment">//123456在文字常量区，p3在栈区</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> c = <span class="number">0</span>; <span class="comment">//全局初始化区</span></span><br><span class="line">    p1 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>);  <span class="comment">//堆区</span></span><br><span class="line">    p2 = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">20</span>);  <span class="comment">//堆区</span></span><br><span class="line">    <span class="built_in">strcpy</span>(p1,<span class="string">"123456"</span>);      <span class="comment">//123456在文字常量区，编译器可能会将它与p3所指向的"123456"优化为1个地方</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="几大区域详解"><a href="#几大区域详解" class="headerlink" title="几大区域详解"></a>几大区域详解</h3><ul>
+<li>申请方式<ul>
+<li>栈区：系统自动分配</li>
+<li>堆区： 程序员自己申请和管理，如上面代码p1，p2,本身在栈区，指向的地址在堆区</li>
+</ul>
+</li>
+<li>申请后系统的响应<ul>
+<li>栈区：只要栈区的剩余空间大于所申请的空间，系统将为程序提供内存，否则报异常栈溢出</li>
+<li>堆区：操作系统会有一个记录空闲内存地址的链表，当系统收到程序的申请是，会遍历该链表，寻找第一个空间大于所申请空间的堆节点，然后将该节点从空闲链表中删除，并将该节点的空间分配给程序。另外，对于大多数系统，会在这块内存空间中的首地址记录本次分配空间的大小，这样，代码中的delete语句就能正确释放该内存空间。另外，由于找到的堆节点大小不一定正好等于申请的大小，系统会自动将多余的内存空间重新放入空闲链表中。</li>
+</ul>
+</li>
+<li>申请大小的限制<ul>
+<li>栈区：栈区是向低地址扩展的数据结构，是一块连续的内存，栈顶的地址和栈的最大容量是系统预先规定好的，是一个在编译时就确定的常数，如果申请空间超过栈的剩余空间时，会提示overflow，因此，能从栈获取的空间较小</li>
+<li>堆区：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆区的大小受限于计算机的虚拟内存，由此可见，堆区获得的空间较大</li>
+</ul>
+</li>
+<li>申请效率的比较<ul>
+<li>栈区：由系统自动分配，速度快</li>
+<li>堆区：堆区是new（创建新对象）分配的内存，一般速度较慢，而且容易产生内存碎片，不过容易操作，使用方便</li>
+</ul>
+</li>
+<li>存储内容<ul>
+<li>栈区：在函数调用时，第一个进栈的是主函数后的下一条命令（函数调用语句的下一句执行语句，可能是函数的第一行语句）的地址，然后是函数的各个参数，在大多数c编译器中，参数是从右向左入栈的，然后是函数的局部变量（静态变量是不入栈的），当本次函数调用结束后，局部变量先出栈（栈的数据出入，先进后出），然后是参数，最后是栈顶指针指向的最开始的内存地址，也就是主函数中的下一条指令，程序由该点继续运行</li>
+<li>堆区：一般堆头部用一个字节存放堆空间大小，堆中的具体内容由程序员具体安排</li>
+</ul>
+</li>
+<li>存取效率比较<ul>
+<li>堆区：堆区是运行时刻赋值的</li>
+<li>栈区：栈区也是运行时刻赋值的，栈区的读写速度比堆区快</li>
+<li>全局去：编译时就会确定</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2017/11/22/iOS Duplicate Symbol静态库冲突解决/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2077,211 +2333,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2016/03/11/hexo的安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="木子的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/03/11/hexo的安装/" itemprop="url">Mac Hexo 的安装</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-11T11:00:06+08:00">
-                2016-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/blog/" itemprop="url" rel="index">
-                    <span itemprop="name">blog</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/03/11/hexo的安装/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/03/11/hexo的安装/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2016/03/11/hexo的安装/" class="leancloud_visitors" data-flag-title="Mac Hexo 的安装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  450
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<p>硬件环境：mac mini</p>
-<p>软件环境：Yosemite 10.10.5</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/03/11/hexo的安装/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2329,7 +2387,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2340,7 +2398,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
