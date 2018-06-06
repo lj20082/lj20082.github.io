@@ -1,26 +1,10 @@
-http://www.muzijia.top/2018/05/26/MBProgressHUD学习/
-http://www.muzijia.top/2018/03/29/7-颠倒整数/
-http://www.muzijia.top/2018/03/29/9-回文数/
-http://www.muzijia.top/2018/03/29/1-两数之和/
-http://www.muzijia.top/2017/11/29/6.Linux的文件权限与目录配置/
-http://www.muzijia.top/2017/11/28/5.首次登录与在线求助man page/
-http://www.muzijia.top/2017/11/28/4.安装CentOS与多重引导小技巧/
-http://www.muzijia.top/2017/11/27/3.主机规划和磁盘分区/
-http://www.muzijia.top/2017/11/27/2.how to learn Linux/
-http://www.muzijia.top/2017/11/27/1.what is Linux/
-http://www.muzijia.top/2017/11/27/hexo with vps/
-http://www.muzijia.top/2017/11/27/VPS 上搭建 Hexo/
 http://www.muzijia.top/2017/11/22/iOS Duplicate Symbol静态库冲突解决/
 http://www.muzijia.top/2017/11/15/用脚本做项目资源清理/
-http://www.muzijia.top/2017/11/15/搬瓦工安装SSR/
 http://www.muzijia.top/2017/11/15/iOS打包Framework的简单步骤/
 http://www.muzijia.top/2017/11/15/iOS打包bundle的简单步骤/
+http://www.muzijia.top/2017/11/05/发布自己的代码到CocoaPods/
 http://www.muzijia.top/2017/09/19/iOS随机数算法及引发的性能研究/
-http://www.muzijia.top/2017/09/17/转换iOS app格式为ipa(Convert iOS app to ipa)/
-http://www.muzijia.top/2016/03/25/发布自己的代码到CocoaPods/
-http://www.muzijia.top/2016/03/24/CocoaPods版本升级/
-http://www.muzijia.top/2016/03/24/about git log/
-http://www.muzijia.top/2016/03/11/install hexo on mac/
-http://www.muzijia.top/2016/03/11/Mac-Hexo-的安装/
-http://www.muzijia.top/2016/03/10/iOS运行时Runtime学习笔记/
-http://www.muzijia.top/2016/03/10/iOS多线程下的数据安全/
+http://www.muzijia.top/2017/09/17/iOS转换app为ipa(Convert iOS app to ipa)/
+http://www.muzijia.top/2016/03/15/hexo在vps上搭建/
+http://www.muzijia.top/2016/03/12/hexo的使用/
+http://www.muzijia.top/2016/03/11/hexo的安装/
