@@ -252,6 +252,448 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2016/03/15/hexo在vps上搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="木子的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/15/hexo在vps上搭建/" itemprop="url">在VPS上搭建hexo</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-15T09:27:31+08:00">
+                2016-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/03/15/hexo在vps上搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/03/15/hexo在vps上搭建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/03/15/hexo在vps上搭建/" class="leancloud_visitors" data-flag-title="在VPS上搭建hexo">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  331
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="CentOS用yum方式安装nodejs和npm"><a href="#CentOS用yum方式安装nodejs和npm" class="headerlink" title="CentOS用yum方式安装nodejs和npm"></a>CentOS用yum方式安装nodejs和npm</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install nodejs npm --enablerepo=epel</span><br></pre></td></tr></table></figure>
+<h4 id="VPS上安装Nginx服务及防火墙"><a href="#VPS上安装Nginx服务及防火墙" class="headerlink" title="VPS上安装Nginx服务及防火墙"></a>VPS上安装Nginx服务及防火墙</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum install epel-release #添加 CenOS 7 的 epel 软件包</span><br><span class="line">yum install nginx #安装Nginx</span><br><span class="line">systemctl start nginx.service #启动Nginx</span><br><span class="line">systemctl start firewalld #启动防火墙</span><br><span class="line">firewall-cmd --permanent --zone=public --add-service=http #添加规则允许HTTPS</span><br><span class="line">firewall-cmd --permanent --zone=public --add-service=https #添加规则允许HTTPS</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">systemctl enable nginx.service #设置 Nginx 自动跟随系统启动</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/15/hexo在vps上搭建/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2016/03/12/hexo的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="木子的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/12/hexo的使用/" itemprop="url">hexo的使用</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-12T00:21:14+08:00">
+                2016-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/03/12/hexo的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/03/12/hexo的使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/03/12/hexo的使用/" class="leancloud_visitors" data-flag-title="hexo的使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  758
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>启动本地服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>启动本地服务器，用于预览主题。默认地址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<ul>
+<li><code>hexo s</code> 是 <code>hexo server</code> 的缩写，命令效果一致；</li>
+<li>预览的同时可以修改文章内容或主题代码，保存后刷新页面即可；</li>
+</ul>
+</li>
+<li><p>新建文章</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &lt;title&gt; </span><br><span class="line">hexo n &lt;title&gt; #layout 没有指明的话，hexo会使用_config.yml中 default_layout 的默认配置</span><br></pre></td></tr></table></figure>
+<p>使用 <code>hexo new [layout] &lt;title&gt;</code> 命令来生成一篇文章，如果 <code>layout</code> 没有指明的话，hexo会使用_config.yml中 <code>default_layout</code> 的默认配置（通常情况下就是post）。如果 <code>title</code>包含空格的话，需要用引号括起来。</p>
+<p> <code>layout</code> 取值有post、draft 和 page，<code>hexo new draft myDraftBlog</code>,layout 为 draft的时候，其实这个md文件是草稿状态，也就是说，这篇文章仅仅是作为你的草稿而不是正式稿，所以不会发表在博客主页上。当你认为你的草稿已经完善到可以发表的状态时，执行<code>hexo publish draft myDraftBlog.md</code>，你就会发现，source/_draft文件夹下的myDraftBlog.md文件消失了，而在_post文件夹下你会找到myDraftBlog.md文件。如果我们一定要查看我们的草稿，我们可以使用<code>hexo g --draft</code>， <code>hexo s --draft</code>命令来在本地预览我们的草稿效果。</p>
+<p><code>layout</code>为page的时候到底会发生什么呢？我们尝试一下下面这个命令<code>hexo new page &quot;about&quot;</code>，这个时候你打开source文件夹你会发现一个about的文件夹，里面会有一个index.md的文件。编辑index.md文件，像之前post和draft的情况一样，我们在其中输入一些测试的内容，然后依次执行<code>hexo g</code>，运行<code>hexo s</code>。打开4000端口之后，你会发现你依然看不到你刚才编辑的index.md的内容。那么这部分的内容到底在哪里呢？如何才能看到呢？我们将url增加‘/about’的内容，也就是说把url改为<a href="http://localhost:4000/about就能看到,其实就是相当于生成一个新的路径，也就是我们说的url的path，或者也可以称作路由。通过这种方式，我们可以把我们的博客再进行细分各个内容版块，更有条理的组织我们的博客" target="_blank" rel="noopener">http://localhost:4000/about就能看到,其实就是相当于生成一个新的路径，也就是我们说的url的path，或者也可以称作路由。通过这种方式，我们可以把我们的博客再进行细分各个内容版块，更有条理的组织我们的博客</a></p>
+</li>
+</ul>
+<ul>
+<li><p>自动生成静态文件并部署到对应仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>hexo d</code> 是 <code>hexo deploy</code> 的缩写，命令效果一致。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>清除缓存文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>生成网站静态文件到默认设置的 <code>public</code> 文件夹</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>生成网站静态文件到默认设置的 <code>public</code> 文件夹。</p>
+<ul>
+<li>便于查看网站生成的静态文件或者手动部署网站；</li>
+<li>如果使用自动部署，不需要先执行该命令；</li>
+<li><code>hexo g</code> 是 <code>hexo generate</code> 的缩写，命令效果一致。</li>
+</ul>
+</li>
+<li><p>常用组合</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo s</span><br><span class="line">hexo clean &amp;&amp; hexo d</span><br><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>参考资料</p>
+<p><a href="http://moxfive.xyz/2015/12/21/common-hexo-commands/" target="_blank" rel="noopener">Hexo 最常用的几个命令</a></p>
+<p><a href="http://oakland.github.io/2016/05/02/hexo-%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E7%AF%87%E6%96%B0%E7%9A%84post/" target="_blank" rel="noopener">如何生成一篇新的post</a></p>
+<p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">hexo官方</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.muzijia.top/2016/03/11/hexo的安装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -495,7 +937,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -506,7 +948,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -517,7 +959,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -588,7 +1030,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
